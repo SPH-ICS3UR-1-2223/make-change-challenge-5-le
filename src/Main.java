@@ -48,7 +48,7 @@ public class Main {
 		
 		//As a bonus, make your project round to the nearest $0.05 like actual stores.
 		
-		
+		in.close();
 	}
 
 }
