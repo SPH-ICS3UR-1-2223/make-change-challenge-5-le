@@ -10,9 +10,22 @@ public class Main {
 		//Read in the amount paid
 		System.out.println("Make a payment");
 		double payment = in.nextDouble();
-		//Print out the amount of change
+		//As a bonus, make your project round to the nearest $0.05 like actual stores.
+		System.out.println("You paid $"+payment);
+		//How do you get just one digit? HINT: %
+		
 		double change = payment - price;
 		System.out.println(change);
+		//shift the decimal place by 2, used the modulus. Make sure its an int.
+		int lastDigit = (int)((change*100)%10);
+		//if output is 1 or 2 or 6 or 7, round down
+		if (lastDigit==1 || lastDigit ==2) {
+			change = change-(lastDigit/100.0);
+		}else if (lastDigit==3 || lastDigit ==4) {
+			change = change +((5-lastDigit)/100.0);
+		}
+		//Print out the amount of change
+		System.out.println("Your change is $"+change);
 		//Break the change into all denominations: 		
 		//$100,$50,$20,$10,$5,$2,$1,$0.25,$0.10,$0.05
 		int num100 = (int)(change/100);
@@ -46,7 +59,8 @@ public class Main {
 		change = change-num005*0.05;
 		System.out.println(num005);
 		
-		//As a bonus, make your project round to the nearest $0.05 like actual stores.
+		
+		
 		
 		in.close();
 	}
