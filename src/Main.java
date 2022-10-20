@@ -15,6 +15,7 @@ public class Main {
 		//How do you get just one digit? HINT: %
 		
 		double change = payment - price;
+		change = Math.round(change*100)/100.0;
 		System.out.println(change);
 		//shift the decimal place by 2, used the modulus. Make sure its an int.
 		int lastDigit = (int)((change*100)%10);
@@ -24,6 +25,7 @@ public class Main {
 		}else if (lastDigit==3 || lastDigit ==4) {
 			change = change +((5-lastDigit)/100.0);
 		}
+		// change = Math.round(change*100)/100.0;
 		//Print out the amount of change
 		System.out.println("Your change is $"+change);
 		//Break the change into all denominations: 		
