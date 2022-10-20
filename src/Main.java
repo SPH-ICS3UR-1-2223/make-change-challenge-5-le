@@ -25,7 +25,7 @@ public class Main {
 		}else if (lastDigit==3 || lastDigit ==4) {
 			change = change +((5-lastDigit)/100.0);
 		}
-		// change = Math.round(change*100)/100.0;
+		change = Math.round(change*100)/100.0;
 		//Print out the amount of change
 		System.out.println("Your change is $"+change);
 		//Break the change into all denominations: 		
